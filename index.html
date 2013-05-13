@@ -2,13 +2,15 @@
 <head>
 
 </head>
-<body>
-
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+	How many times I've thought of Andrea Fant since May 13, 2013 2:06AM : <b><span id="clock">&nbsp;</span></b>
 	<script>
-		var d = new Date();
-		var n = d.getTime();
-		document.write("How many times I've thought of Andrea Fant since May 13, 2013 2:06AM : " + Math.floor((n - 1368428661384) / 1000));
-
+		function updateClock()
+		{
+			var d = new Date();
+			var n = d.getTime();
+			document.getElementById("clock").firstChild.nodeValue = Math.floor((n - 1368428661384) / 1000);
+		}
 	</script>
 
 
